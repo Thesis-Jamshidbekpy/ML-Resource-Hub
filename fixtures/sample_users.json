@@ -1,0 +1,32 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$XEGScu9PlA1QZFjvSeRHOK$mAiMwCXsGNG2hSzIJclzGEtYdIVJix0olchfzRiYBvE=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "demo_student",
+      "first_name": "Demo",
+      "last_name": "Student",
+      "email": "demo.student@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-06-03T18:00:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.profile",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "bio": "Final-year computer science student exploring applied machine learning methods and their educational resources.",
+      "avatar": "",
+      "institution": "University Research Lab",
+      "academic_interest": "Supervised Learning and Explainable AI",
+      "updated_at": "2026-06-03T18:05:00Z"
+    }
+  }
+]

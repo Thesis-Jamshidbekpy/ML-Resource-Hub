@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Profile" %} | {% trans "ML Resource Hub" %}{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h1 class="h2 mb-1">{{ user.get_full_name|default:user.username }}</h1>
+        <p class="text-muted mb-0">{{ user.email }}</p>
+    </div>
+    <a class="btn btn-outline-primary" href="{% url 'accounts:profile_edit' %}">{% trans "Edit Profile" %}</a>
+</div>
+
+<div class="row g-4 mb-4">
+    <div class="col-lg-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <h2 class="h5">{% trans "Academic Profile" %}</h2>
+                <p><strong>{% trans "Institution" %}:</strong> {% if user.profile.institution %}{{ user.profile.institution }}{% else %}{% trans "Not provided" %}{% endif %}</p>
+                <p><strong>{% trans "Research Interest" %}:</strong> {% if user.profile.academic_interest %}{{ user.profile.academic_interest }}{% else %}{% trans "Not provided" %}{% endif %}</p>
+                <p class="mb-0"><strong>{% trans "Bio" %}:</strong> {% if user.profile.bio %}{{ user.profile.bio }}{% else %}{% trans "No biography added yet." %}{% endif %}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <h2 class="h5">{% trans "Recently Viewed Algorithms" %}</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped align-middle">
+                        <thead>
+                            <tr>
+                                <th>{% trans "Algorithm" %}</th>
+                                <th>{% trans "Category" %}</th>
+                                <th>{% trans "Viewed" %}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in recently_viewed %}
+                                <tr>
+                                    <td><a href="{{ item.algorithm.get_absolute_url }}">{{ item.algorithm.localized_name }}</a></td>
+                                    <td><span class="badge bg-info-subtle text-info-emphasis">{{ item.algorithm.get_category_display }}</span></td>
+                                    <td>{{ item.last_viewed_at|date:"M d, Y H:i" }}</td>
+                                </tr>
+                            {% empty %}
+                                <tr><td colspan="3" class="text-center text-muted">{% trans "No viewing history yet." %}</td></tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-6">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <h2 class="h5">{% trans "Favorite Algorithms" %}</h2>
+                {% for favorite in favorite_algorithms %}
+                    <div class="border rounded p-3 mb-3">
+                        <a class="fw-semibold" href="{{ favorite.algorithm.get_absolute_url }}">{{ favorite.algorithm.localized_name }}</a>
+                        <div class="small text-muted">{{ favorite.algorithm.localized_algorithm_type }}</div>
+                    </div>
+                {% empty %}
+                    <p class="text-muted mb-0">{% trans "You have not saved any favorite algorithms yet." %}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <h2 class="h5">{% trans "Bookmarked Resources" %}</h2>
+                {% for bookmark in bookmarked_resources %}
+                    <div class="border rounded p-3 mb-3">
+                        <a class="fw-semibold" href="{{ bookmark.resource.get_absolute_url }}">{{ bookmark.resource.localized_title }}</a>
+                        <div class="small text-muted">{{ bookmark.resource.algorithm.localized_name }} · {{ bookmark.resource.get_resource_type_display }}</div>
+                    </div>
+                {% empty %}
+                    <p class="text-muted mb-0">{% trans "You have not bookmarked any resources yet." %}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

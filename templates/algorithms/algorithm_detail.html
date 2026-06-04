@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ algorithm.localized_name }} | {% trans "ML Resource Hub" %}{% endblock %}
+
+{% block content %}
+<div class="row g-4">
+    <div class="col-lg-8">
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                    <span class="badge bg-primary">{{ algorithm.get_category_display }}</span>
+                    <span class="badge bg-dark">{{ algorithm.localized_algorithm_type }}</span>
+                    <span class="badge bg-info text-dark">{{ algorithm.view_count }} {% trans "views" %}</span>
+                    <span class="badge bg-warning text-dark">{{ algorithm.average_rating|floatformat:1 }}/5</span>
+                </div>
+                <h1 class="h2 mb-3">{{ algorithm.localized_name }}</h1>
+                <p>{{ algorithm.localized_description }}</p>
+                <hr>
+                <h2 class="h5">{% trans "Mathematical Foundation" %}</h2>
+                <div>{{ algorithm.localized_mathematical_foundation|linebreaks }}</div>
+                <h2 class="h5">{% trans "Advantages" %}</h2>
+                <div>{{ algorithm.localized_advantages|linebreaks }}</div>
+                <h2 class="h5">{% trans "Disadvantages" %}</h2>
+                <div>{{ algorithm.localized_disadvantages|linebreaks }}</div>
+                <h2 class="h5">{% trans "Applications" %}</h2>
+                <div>{{ algorithm.localized_applications|linebreaks }}</div>
+                <h2 class="h5">{% trans "Complexity" %}</h2>
+                <p class="mb-0">{{ algorithm.localized_complexity }}</p>
+            </div>
+        </div>
+
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h2 class="h4">{% trans "Learning Resources" %}</h2>
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th>{% trans "Title" %}</th>
+                                <th>{% trans "Type" %}</th>
+                                <th>{% trans "Downloads" %}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for resource in algorithm.resources.all %}
+                                <tr>
+                                    <td><a href="{{ resource.get_absolute_url }}">{{ resource.localized_title }}</a></td>
+                                    <td><span class="badge bg-secondary-subtle text-secondary-emphasis">{{ resource.get_resource_type_display }}</span></td>
+                                    <td>{{ resource.download_count }}</td>
+                                </tr>
+                            {% empty %}
+                                <tr><td colspan="3" class="text-center text-muted">{% trans "No resources linked yet." %}</td></tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="h4">{% trans "Comments" %}</h2>
+                {% if user.is_authenticated %}
+                    <form method="post" action="{% url 'algorithms:comment' algorithm.slug %}" class="mb-4">
+                        {% csrf_token %}
+                        {{ comment_form.as_p }}
+                        <button type="submit" class="btn btn-primary btn-sm">{% trans "Post Comment" %}</button>
+                    </form>
+                {% else %}
+                    <p class="text-muted">{% trans "Please" %} <a href="{% url 'accounts:login' %}">{% trans "log in" %}</a> {% trans "to comment." %}</p>
+                {% endif %}
+                {% for comment in algorithm.comments.all %}
+                    <div class="border rounded p-3 mb-3">
+                        <div class="d-flex justify-content-between">
+                            <strong>{{ comment.user.username }}</strong>
+                            <span class="small text-muted">{{ comment.created_at|date:"M d, Y H:i" }}</span>
+                        </div>
+                        <div class="mb-0 mt-2">{{ comment.text|linebreaks }}</div>
+                    </div>
+                {% empty %}
+                    <p class="text-muted mb-0">{% trans "No comments yet." %}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h2 class="h5">{% trans "Your Actions" %}</h2>
+                {% if user.is_authenticated %}
+                    <form method="post" action="{% url 'algorithms:favorite' algorithm.slug %}" class="mb-3">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-outline-primary w-100">
+                            {% if is_favorited %}{% trans "Remove from Favorites" %}{% else %}{% trans "Add to Favorites" %}{% endif %}
+                        </button>
+                    </form>
+                    <form method="post" action="{% url 'algorithms:rate' algorithm.slug %}">
+                        {% csrf_token %}
+                        {{ rating_form.as_p }}
+                        <button type="submit" class="btn btn-primary w-100">{% trans "Save Rating" %}</button>
+                    </form>
+                {% else %}
+                    <p class="text-muted mb-0">{% trans "Login to rate this algorithm or save it to favorites." %}</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="h5">{% trans "Related Algorithms" %}</h2>
+                {% for related in related_algorithms %}
+                    <div class="border rounded p-3 mb-3">
+                        <a class="fw-semibold" href="{{ related.get_absolute_url }}">{{ related.localized_name }}</a>
+                        <div class="small text-muted">{{ related.localized_algorithm_type }}</div>
+                    </div>
+                {% empty %}
+                    <p class="text-muted mb-0">{% trans "No related algorithms found in this category." %}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

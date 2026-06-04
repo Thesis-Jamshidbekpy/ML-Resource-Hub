@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Resources" %} | {% trans "ML Resource Hub" %}{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <h1 class="h2 mb-1">{% trans "Learning Resources" %}</h1>
+    <p class="text-muted mb-0">{% trans "Books, papers, articles, videos, documentation, and datasets for algorithm study." %}</p>
+</div>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+        <form method="get" class="row g-3">
+            <div class="col-md-5">{{ filter_form.q.label_tag }}{{ filter_form.q }}</div>
+            <div class="col-md-3">{{ filter_form.resource_type.label_tag }}{{ filter_form.resource_type }}</div>
+            <div class="col-md-2">{{ filter_form.ordering.label_tag }}{{ filter_form.ordering }}</div>
+            <div class="col-md-2 d-grid align-self-end">
+                <button class="btn btn-primary" type="submit">{% trans "Apply Filters" %}</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row g-4">
+    {% for resource in resources %}
+        <div class="col-md-6 col-xl-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="badge bg-secondary-subtle text-secondary-emphasis">{{ resource.get_resource_type_display }}</span>
+                        <span class="badge bg-info-subtle text-info-emphasis">{{ resource.download_count }} {% trans "downloads" %}</span>
+                    </div>
+                    <h2 class="h5">{{ resource.localized_title }}</h2>
+                    <p class="small text-muted">{{ resource.algorithm.localized_name }}{% if resource.localized_author %} · {{ resource.localized_author }}{% endif %}</p>
+                    <p>{{ resource.localized_description|truncatewords:24 }}</p>
+                </div>
+                <div class="card-footer bg-white border-0 pt-0 pb-3">
+                    <a class="btn btn-outline-primary btn-sm" href="{{ resource.get_absolute_url }}">{% trans "View Resource" %}</a>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info mb-0">{% trans "No resources matched your current filters." %}</div>
+        </div>
+    {% endfor %}
+</div>
+
+{% include "includes/pagination.html" %}
+{% endblock %}

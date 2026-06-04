@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Login" %} | {% trans "ML Resource Hub" %}{% endblock %}
+{% block body_class %}page-login{% endblock %}
+
+{% block content %}
+<div class="login-shell">
+    <div class="row align-items-center g-5 w-100">
+        <div class="col-lg-5 login-brand d-none d-lg-block">
+            <div class="mb-4">
+                <i class="bi bi-cpu-fill text-danger" style="font-size: 3rem;"></i>
+            </div>
+            <h1>ML <span class="brand-red">Resource Hub</span></h1>
+            <p>{% trans "Structured database for machine learning algorithms, study resources, ratings, and bookmarks." %}</p>
+        </div>
+        <div class="col-lg-5 offset-lg-2 col-xl-4 offset-xl-3">
+            <div class="login-card">
+                <div class="text-center">
+                    <i class="bi bi-shield-lock login-shield"></i>
+                    <p class="login-welcome mb-0">{% trans "Welcome to your account" %}</p>
+                </div>
+                <form method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="mb-3">
+                            <label class="form-label" for="{{ field.id_for_label }}">
+                                {% if field.name == "username" %}
+                                    <i class="bi bi-person me-1"></i>
+                                {% elif field.name == "password" %}
+                                    <i class="bi bi-lock me-1"></i>
+                                {% endif %}
+                                {{ field.label }}
+                            </label>
+                            {{ field }}
+                            {% if field.errors %}
+                                <div class="text-danger small mt-1">{{ field.errors|striptags }}</div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="bi bi-box-arrow-in-right me-1"></i>{% trans "Sign In" %}
+                    </button>
+                </form>
+                <p class="small mt-3 mb-0 text-muted">
+                    {% trans "New here?" %} <a href="{% url 'accounts:register' %}">{% trans "Create an account" %}</a>.
+                </p>
+                <div class="login-status">
+                    <span class="dot"></span>
+                    {% trans "System active" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

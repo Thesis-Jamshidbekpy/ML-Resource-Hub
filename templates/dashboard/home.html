@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Home" %} | {% trans "ML Resource Hub" %}{% endblock %}
+
+{% block content %}
+<section class="hero-panel mb-5">
+    <span class="hero-badge">{% trans "ACADEMIC ML DATABASE" %}</span>
+    <h1>{% trans "Explore machine learning algorithms and curated study resources." %}</h1>
+    <p class="lead">{% trans "ML Resource Hub is a structured academic database for browsing algorithms, comparing concepts, and discovering books, articles, videos, papers, datasets, and documentation." %}</p>
+    <div class="hero-actions d-flex gap-2 flex-wrap mt-4">
+        <a class="btn btn-primary btn-lg" href="{% url 'algorithms:list' %}">
+            <i class="bi bi-diagram-3 me-1"></i>{% trans "Browse Algorithms" %}
+        </a>
+        <a class="btn btn-outline-primary btn-lg" href="{% url 'resources:list' %}">
+            <i class="bi bi-book me-1"></i>{% trans "Explore Resources" %}
+        </a>
+        <a class="btn btn-outline-primary btn-lg" href="/admin/" target="_blank" rel="noopener">
+            <i class="bi bi-shield-lock me-1"></i>{% trans "Admin panel" %}
+        </a>
+    </div>
+</section>
+
+<div class="row g-4 mb-4">
+    <div class="col-lg-8">
+        <div class="card h-100">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2 class="section-title mb-0">{% trans "Featured Algorithms" %}</h2>
+                    <a href="{% url 'algorithms:list' %}" class="small">{% trans "View all" %}</a>
+                </div>
+                <div class="row g-3">
+                    {% for algorithm in featured_algorithms %}
+                        <div class="col-md-6">
+                            <div class="card-inner-tile">
+                                <span class="badge bg-primary-subtle text-primary-emphasis mb-2">{{ algorithm.get_category_display }}</span>
+                                <h3 class="h6 mb-1">{{ algorithm.localized_name }}</h3>
+                                <p class="small text-muted mb-1">{{ algorithm.localized_algorithm_type }}</p>
+                                <p class="small mb-2">{{ algorithm.localized_description|truncatewords:18 }}</p>
+                                <a href="{{ algorithm.get_absolute_url }}" class="small">{% trans "Read more" %} <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="section-title">{% trans "Quick Search" %}</h2>
+                <form method="get" action="{% url 'dashboard:search_results' %}">
+                    {{ search_form.q }}
+                    <button class="btn btn-primary mt-3 w-100" type="submit">{% trans "Search Hub" %}</button>
+                </form>
+                <hr class="border-secondary my-4">
+                <h2 class="section-title">{% trans "Latest Resources" %}</h2>
+                {% for resource in latest_resources %}
+                    <div class="list-item-card">
+                        <a class="fw-semibold d-block" href="{{ resource.get_absolute_url }}">{{ resource.localized_title }}</a>
+                        <div class="small text-muted">{{ resource.algorithm.localized_name }} · {{ resource.get_resource_type_display }}</div>
+                    </div>
+                {% empty %}
+                    <p class="text-muted mb-0">{% trans "No resources available yet." %}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if recently_viewed %}
+    <div class="card">
+        <div class="card-body">
+            <h2 class="section-title">{% trans "Recently Viewed" %}</h2>
+            <div class="row g-3">
+                {% for item in recently_viewed %}
+                    <div class="col-md-4">
+                        <div class="list-item-card mb-0">
+                            <a class="fw-semibold" href="{{ item.algorithm.get_absolute_url }}">{{ item.algorithm.localized_name }}</a>
+                            <div class="small text-muted"><i class="bi bi-clock me-1"></i>{{ item.last_viewed_at|date:"M d, Y H:i" }}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% endblock %}

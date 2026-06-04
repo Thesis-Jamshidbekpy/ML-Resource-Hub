@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Search Results" %} | {% trans "ML Resource Hub" %}{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <h1 class="h2 mb-1">{% trans "Search Results" %}</h1>
+    <p class="text-muted mb-0">{% blocktrans with search_term=query|default:'all content' %}Results for "{{ search_term }}".{% endblocktrans %}</p>
+</div>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+        <form method="get" class="row g-3">
+            <div class="col-md-4">
+                <label class="form-label" for="id_q">{% trans "Keyword" %}</label>
+                {{ search_form.q }}
+            </div>
+            <div class="col-md-3">
+                <label class="form-label" for="category">{% trans "Category" %}</label>
+                <select name="category" id="category" class="form-select">
+                    <option value="">{% trans "All Categories" %}</option>
+                    {% for value, label in category_choices %}
+                        <option value="{{ value }}" {% if selected_category == value %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label" for="resource_type">{% trans "Resource Type" %}</label>
+                <select name="resource_type" id="resource_type" class="form-select">
+                    <option value="">{% trans "All Resource Types" %}</option>
+                    {% for value, label in resource_type_choices %}
+                        <option value="{{ value }}" {% if selected_resource_type == value %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2 d-grid align-self-end">
+                <button class="btn btn-primary" type="submit">{% trans "Search" %}</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-6">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <h2 class="h4">{% trans "Algorithms" %}</h2>
+                {% for algorithm in algorithms %}
+                    <div class="border rounded p-3 mb-3">
+                        <a class="fw-semibold" href="{{ algorithm.get_absolute_url }}">{{ algorithm.localized_name }}</a>
+                        <div class="small text-muted">{{ algorithm.get_category_display }} · {% trans "Rating" %} {{ algorithm.average_rating|floatformat:1 }}/5</div>
+                    </div>
+                {% empty %}
+                    <p class="text-muted mb-0">{% trans "No matching algorithms found." %}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <h2 class="h4">{% trans "Resources" %}</h2>
+                {% for resource in resources %}
+                    <div class="border rounded p-3 mb-3">
+                        <a class="fw-semibold" href="{{ resource.get_absolute_url }}">{{ resource.localized_title }}</a>
+                        <div class="small text-muted">{{ resource.algorithm.localized_name }} · {{ resource.get_resource_type_display }}</div>
+                    </div>
+                {% empty %}
+                    <p class="text-muted mb-0">{% trans "No matching resources found." %}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,595 @@
+/* ML Resource Hub — Jazzmin 3 / AdminLTE 4 · SOSbot SmartCane admin theme */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root,
+html[data-bs-theme="dark"] {
+    --sos-bg: #14171d;
+    --sos-sidebar: #1a1d24;
+    --sos-bar: #12151a;
+    --sos-canvas: #1e2128;
+    --sos-card: #2a2e36;
+    --sos-card-header: #32373f;
+    --sos-row-alt: #252930;
+    --sos-red: #dc3545;
+    --sos-red-hover: #bb2d3b;
+    --sos-teal: #20c997;
+    --sos-teal-hover: #1baa80;
+    --sos-blue: #0ea5e9;
+    --sos-blue-hover: #0284c7;
+    --sos-text: #f1f5f9;
+    --sos-muted: #9ca3af;
+    --sos-border: rgba(255, 255, 255, 0.09);
+    --sos-link: #7dd3fc;
+
+    --bs-body-bg: var(--sos-canvas);
+    --bs-body-color: var(--sos-text);
+    --bs-border-color: var(--sos-border);
+    --bs-tertiary-bg: var(--sos-canvas);
+    --bs-secondary-bg: var(--sos-card);
+    --bs-emphasis-color: var(--sos-text);
+    --bs-primary: var(--sos-red);
+    --bs-primary-rgb: 220, 53, 69;
+    --bs-success: var(--sos-teal);
+    --bs-success-rgb: 32, 201, 151;
+    --bs-info: var(--sos-blue);
+    --bs-info-rgb: 14, 165, 233;
+    --bs-danger: var(--sos-red);
+    --bs-link-color: var(--sos-link);
+    --bs-link-hover-color: #bae6fd;
+}
+
+/* ---- Global ------------------------------------------------ */
+
+.app-wrapper,
+body.layout-fixed {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    background-color: var(--sos-canvas) !important;
+    color: var(--sos-text) !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+body.bg-body-tertiary {
+    background-color: var(--sos-canvas) !important;
+}
+
+/* ---- Top header (dark, not white) --------------------------- */
+
+.app-header,
+.app-header.navbar,
+#jazzy-navbar {
+    background-color: var(--sos-bar) !important;
+    border-bottom: 1px solid var(--sos-border) !important;
+    color: var(--sos-text) !important;
+}
+
+.app-header .nav-link,
+.app-header .navbar-nav .nav-link {
+    color: var(--sos-muted) !important;
+    font-weight: 500;
+}
+
+.app-header .nav-link:hover {
+    color: var(--sos-text) !important;
+}
+
+.app-header .form-control,
+.app-header .form-control-navbar {
+    background-color: #2a2f38 !important;
+    border: 1px solid var(--sos-border) !important;
+    color: var(--sos-text) !important;
+    border-radius: 8px !important;
+    min-width: 180px;
+}
+
+.app-header .form-control::placeholder {
+    color: #6b7280 !important;
+}
+
+.app-header .btn-navbar,
+.app-header button[type="submit"] {
+    background-color: var(--sos-red) !important;
+    border-color: var(--sos-red) !important;
+    color: #fff !important;
+}
+
+.app-header .dropdown-menu {
+    background: var(--sos-card);
+    border-color: var(--sos-border);
+}
+
+.app-header .dropdown-item {
+    color: var(--sos-text);
+}
+
+.app-header .dropdown-item:hover,
+.app-header .dropdown-item.active {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--sos-text);
+}
+
+/* ---- Sidebar ------------------------------------------------ */
+
+.app-sidebar,
+#jazzy-sidebar {
+    background-color: var(--sos-sidebar) !important;
+    border-right: 1px solid var(--sos-border) !important;
+}
+
+.sidebar-brand .brand-link,
+#jazzy-logo {
+    color: var(--sos-text) !important;
+    border-bottom: 1px solid var(--sos-border);
+}
+
+.sidebar-brand .brand-text {
+    color: var(--sos-text) !important;
+    font-weight: 600 !important;
+}
+
+.app-sidebar .nav-link {
+    color: var(--sos-muted) !important;
+    border-radius: 6px;
+    margin: 2px 8px;
+    font-weight: 500;
+}
+
+.app-sidebar .nav-link:hover {
+    background: rgba(255, 255, 255, 0.06) !important;
+    color: var(--sos-text) !important;
+}
+
+.app-sidebar .nav-link.active,
+.app-sidebar .menu-open > .nav-link {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.app-sidebar .nav-header {
+    color: #6b7280 !important;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.app-sidebar .user-panel .info a,
+.app-sidebar .user-panel .info span {
+    color: var(--sos-text) !important;
+    font-weight: 600;
+}
+
+/* ---- Main content shell ------------------------------------- */
+
+.app-main {
+    background-color: var(--sos-canvas) !important;
+}
+
+.app-content-header {
+    background: transparent !important;
+    border-bottom: none !important;
+    padding-top: 1rem;
+}
+
+.app-content-header h3,
+.content-header h1 {
+    color: var(--sos-text) !important;
+    font-weight: 700 !important;
+    font-size: 1.65rem !important;
+}
+
+.app-content {
+    background-color: var(--sos-canvas) !important;
+    padding-bottom: 2rem;
+}
+
+.breadcrumb-item,
+.breadcrumb-item a {
+    color: var(--sos-muted) !important;
+    font-weight: 500;
+}
+
+.breadcrumb-item.active {
+    color: var(--sos-text) !important;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: #6b7280;
+}
+
+/* ---- Cards (dashboard + changelist) ------------------------- */
+
+.card {
+    background-color: var(--sos-card) !important;
+    border: 1px solid var(--sos-border) !important;
+    border-radius: 10px !important;
+    color: var(--sos-text) !important;
+    box-shadow: none !important;
+}
+
+.card-header {
+    background-color: var(--sos-card-header) !important;
+    border-bottom: 1px solid var(--sos-border) !important;
+    color: var(--sos-text) !important;
+}
+
+.card-header h5,
+.card-body {
+    color: var(--sos-text) !important;
+}
+
+/* Dashboard index model tables */
+.dashboard .card .table {
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--sos-text);
+    --bs-table-border-color: var(--sos-border);
+    margin-bottom: 0;
+}
+
+.dashboard .card .table td {
+    border-color: var(--sos-border) !important;
+    vertical-align: middle;
+    padding: 0.65rem 0.25rem;
+}
+
+.dashboard .card .table td a {
+    color: var(--sos-link) !important;
+    font-weight: 600;
+}
+
+.dashboard .card .table td a:hover {
+    color: #bae6fd !important;
+}
+
+/* ---- Buttons (SOSbot: teal add, blue change, red search) ---- */
+
+.btn {
+    font-weight: 600 !important;
+    border-radius: 6px !important;
+    font-size: 0.8125rem !important;
+}
+
+.btn-primary {
+    background-color: var(--sos-red) !important;
+    border-color: var(--sos-red) !important;
+    color: #fff !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--sos-red-hover) !important;
+    border-color: var(--sos-red-hover) !important;
+    color: #fff !important;
+}
+
+.btn-success,
+.addlink {
+    background-color: var(--sos-teal) !important;
+    border-color: var(--sos-teal) !important;
+    color: #0f172a !important;
+}
+
+.btn-success:hover,
+.addlink:hover {
+    background-color: var(--sos-teal-hover) !important;
+    border-color: var(--sos-teal-hover) !important;
+    color: #0f172a !important;
+}
+
+.btn-info,
+.changelink,
+.viewlink {
+    background-color: var(--sos-blue) !important;
+    border-color: var(--sos-blue) !important;
+    color: #fff !important;
+}
+
+.btn-info:hover,
+.changelink:hover,
+.viewlink:hover {
+    background-color: var(--sos-blue-hover) !important;
+    border-color: var(--sos-blue-hover) !important;
+    color: #fff !important;
+}
+
+.btn-danger,
+.deletelink {
+    background-color: var(--sos-red) !important;
+    border-color: var(--sos-red) !important;
+    color: #fff !important;
+}
+
+.btn-secondary,
+.btn-outline-secondary {
+    background-color: #2a2f38 !important;
+    border-color: var(--sos-border) !important;
+    color: var(--sos-text) !important;
+}
+
+.object-tools a,
+.object-tools li a {
+    background-color: var(--sos-teal) !important;
+    border: 0 !important;
+    color: #0f172a !important;
+    font-weight: 700 !important;
+    padding: 0.45rem 0.9rem !important;
+    border-radius: 6px !important;
+}
+
+/* Changelist action "Go" */
+.actions .button,
+button[name="index"] {
+    background-color: var(--sos-red) !important;
+    border-color: var(--sos-red) !important;
+    color: #fff !important;
+}
+
+/* ---- Data tables (changelist) ------------------------------- */
+
+#result_list,
+.table {
+    --bs-table-bg: var(--sos-card);
+    --bs-table-color: var(--sos-text);
+    --bs-table-border-color: var(--sos-border);
+    color: var(--sos-text) !important;
+}
+
+#result_list thead th,
+.table thead th {
+    background-color: var(--sos-card-header) !important;
+    color: var(--sos-text) !important;
+    font-weight: 700 !important;
+    font-size: 0.72rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-color: var(--sos-border) !important;
+    padding: 0.75rem 0.85rem !important;
+}
+
+#result_list thead th a {
+    color: var(--sos-text) !important;
+}
+
+#result_list tbody td,
+#result_list tbody th,
+.table tbody td,
+.table tbody th {
+    background-color: var(--sos-card) !important;
+    color: #d1d5db !important;
+    border-color: var(--sos-border) !important;
+    padding: 0.7rem 0.85rem !important;
+    vertical-align: middle;
+}
+
+#result_list tbody tr:nth-child(even) td,
+.table-striped > tbody > tr:nth-of-type(even) > * {
+    background-color: var(--sos-row-alt) !important;
+}
+
+#result_list tbody tr:hover td {
+    background-color: rgba(14, 165, 233, 0.1) !important;
+}
+
+#result_list tbody td a {
+    color: var(--sos-link) !important;
+    font-weight: 600;
+}
+
+.paginator,
+.small.quiet {
+    color: var(--sos-muted) !important;
+}
+
+/* ---- Forms & filters ---------------------------------------- */
+
+label,
+.form-group label,
+.aligned label {
+    color: var(--sos-muted) !important;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.form-control,
+.form-select,
+.vTextField,
+.vLargeTextField,
+select {
+    background-color: #2a2f38 !important;
+    border: 1px solid var(--sos-border) !important;
+    color: var(--sos-text) !important;
+    border-radius: 8px !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--sos-red) !important;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25) !important;
+    color: var(--sos-text) !important;
+}
+
+#changelist-search .form-control {
+    min-width: 220px;
+}
+
+#changelist .actions label,
+#changelist .actions select {
+    color: var(--sos-text) !important;
+}
+
+/* Filter dropdowns in changelist toolbar */
+#change-list-filters .form-select,
+#change-list-filters select {
+    background-color: #2a2f38 !important;
+    color: var(--sos-text) !important;
+    border-color: var(--sos-border) !important;
+}
+
+/* ---- Recent actions (dashboard right column) ---------------- */
+
+#content-related,
+#recent-actions-module {
+    background: var(--sos-card) !important;
+    border: 1px solid var(--sos-border);
+    border-radius: 10px;
+    padding: 1.15rem;
+    color: var(--sos-text);
+}
+
+#recent-actions-module h4 {
+    color: var(--sos-text) !important;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.timeline-item,
+.timeline-header,
+.timeline-body,
+.timeline-item a {
+    color: var(--sos-text) !important;
+}
+
+.timeline-item .time,
+.timeline-item .mini.quiet {
+    color: var(--sos-muted) !important;
+    font-size: 0.8rem;
+}
+
+/* ---- Change form -------------------------------------------- */
+
+.app-model .card-outline,
+.change-form .card {
+    background: var(--sos-card) !important;
+}
+
+.submit-row {
+    background: var(--sos-card-header) !important;
+    border: 1px solid var(--sos-border);
+    border-radius: 8px;
+    padding: 0.75rem;
+}
+
+fieldset {
+    border-color: var(--sos-border) !important;
+}
+
+fieldset h2 {
+    color: var(--sos-text) !important;
+}
+
+.help,
+helptext,
+.form-text {
+    color: var(--sos-muted) !important;
+}
+
+/* ---- Login -------------------------------------------------- */
+
+.login-page,
+body.login {
+    background-color: var(--sos-bg) !important;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        radial-gradient(ellipse 50% 40% at 0% 0%, rgba(220, 53, 69, 0.15), transparent);
+    background-size: 48px 48px, 48px 48px, auto;
+}
+
+.login-box .card,
+.login-card-body {
+    background: var(--sos-card) !important;
+    border: 1px solid var(--sos-border);
+    color: var(--sos-text) !important;
+}
+
+.login-box .btn-primary {
+    background: var(--sos-red) !important;
+    border: 0 !important;
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.35);
+}
+
+/* ---- Footer & alerts ---------------------------------------- */
+
+.app-footer {
+    background: var(--sos-bar) !important;
+    border-top: 1px solid var(--sos-border) !important;
+    color: var(--sos-muted) !important;
+}
+
+.alert-success {
+    background: rgba(32, 201, 151, 0.12) !important;
+    border-color: rgba(32, 201, 151, 0.3) !important;
+    color: #6ee7b7 !important;
+}
+
+.alert-danger {
+    background: rgba(220, 53, 69, 0.12) !important;
+    color: #fca5a5 !important;
+}
+
+.alert-warning {
+    background: rgba(245, 158, 11, 0.12) !important;
+    color: #fcd34d !important;
+}
+
+.alert-info {
+    background: rgba(14, 165, 233, 0.12) !important;
+    color: #7dd3fc !important;
+}
+
+/* Select2 */
+.select2-container--default .select2-selection--single {
+    background: #2a2f38 !important;
+    border-color: var(--sos-border) !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: var(--sos-text) !important;
+}
+
+.select2-dropdown {
+    background: var(--sos-card) !important;
+    border-color: var(--sos-border) !important;
+}
+
+.select2-results__option {
+    color: var(--sos-text) !important;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background: var(--sos-red) !important;
+}
+
+/* Pagination */
+.page-link {
+    background: var(--sos-card);
+    border-color: var(--sos-border);
+    color: var(--sos-muted);
+}
+
+.page-item.active .page-link {
+    background: var(--sos-red);
+    border-color: var(--sos-red);
+    color: #fff;
+}
+
+/* Modal */
+.modal-content {
+    background: var(--sos-card);
+    border-color: var(--sos-border);
+    color: var(--sos-text);
+}
+
+.modal-header {
+    border-color: var(--sos-border);
+}
+
+/* Legacy AdminLTE 3 class aliases (harmless if unused) */
+.main-sidebar,
+.content-wrapper,
+.main-header {
+    /* covered by app-* rules above */
+}

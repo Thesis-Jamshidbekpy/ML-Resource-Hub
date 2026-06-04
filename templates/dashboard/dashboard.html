@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Dashboard" %} | {% trans "ML Resource Hub" %}{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <span class="hero-badge">{% trans "PLATFORM OVERVIEW" %}</span>
+    <h1 class="h2 fw-bold mb-1">{% trans "Platform Dashboard" %}</h1>
+    <p class="text-muted mb-0">{% trans "A management overview of algorithms, resources, and users." %}</p>
+</div>
+
+<div class="row g-4 mb-4">
+    <div class="col-md-4">
+        <div class="stat-card stat-red">
+            <div class="stat-icon"><i class="bi bi-diagram-3"></i></div>
+            <div class="stat-value">{{ total_algorithms }}</div>
+            <div class="stat-label">{% trans "Algorithms" %}</div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="stat-card stat-green">
+            <div class="stat-icon"><i class="bi bi-journal-bookmark"></i></div>
+            <div class="stat-value">{{ total_resources }}</div>
+            <div class="stat-label">{% trans "Resources" %}</div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="stat-card stat-blue">
+            <div class="stat-icon"><i class="bi bi-people"></i></div>
+            <div class="stat-value">{{ total_users }}</div>
+            <div class="stat-label">{% trans "Users" %}</div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-6">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="section-title">{% trans "Most Viewed Algorithms" %}</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th>{% trans "Algorithm" %}</th>
+                                <th>{% trans "Category" %}</th>
+                                <th>{% trans "Views" %}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for algorithm in most_viewed_algorithms %}
+                                <tr>
+                                    <td><a href="{{ algorithm.get_absolute_url }}">{{ algorithm.localized_name }}</a></td>
+                                    <td class="text-muted">{{ algorithm.get_category_display }}</td>
+                                    <td><span class="badge bg-secondary-subtle text-secondary-emphasis">{{ algorithm.view_count }}</span></td>
+                                </tr>
+                            {% empty %}
+                                <tr><td colspan="3" class="text-center text-muted">{% trans "No algorithms available." %}</td></tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="section-title">{% trans "Latest Resources" %}</h2>
+                {% for resource in latest_resources %}
+                    <div class="list-item-card">
+                        <a class="fw-semibold d-block" href="{{ resource.get_absolute_url }}">{{ resource.localized_title }}</a>
+                        <div class="small text-muted">
+                            <i class="bi bi-clock me-1"></i>{{ resource.algorithm.localized_name }} · {{ resource.created_at|date:"M d, Y" }}
+                        </div>
+                    </div>
+                {% empty %}
+                    <p class="text-muted mb-0">{% trans "No resources available." %}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

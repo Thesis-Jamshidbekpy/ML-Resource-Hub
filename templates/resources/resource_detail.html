@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ resource.localized_title }} | {% trans "ML Resource Hub" %}{% endblock %}
+
+{% block content %}
+<div class="row g-4">
+    <div class="col-lg-8">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                    <span class="badge bg-secondary">{{ resource.get_resource_type_display }}</span>
+                    <span class="badge bg-info text-dark">{{ resource.download_count }} {% trans "downloads" %}</span>
+                </div>
+                <h1 class="h2">{{ resource.localized_title }}</h1>
+                <p class="text-muted">{{ resource.algorithm.localized_name }}{% if resource.localized_author %} · {{ resource.localized_author }}{% endif %}</p>
+                <div>{{ resource.localized_description|linebreaks }}</div>
+                <div class="d-flex gap-2 flex-wrap">
+                    <a class="btn btn-primary" href="{% url 'resources:download' resource.pk %}">{% trans "Access Resource" %}</a>
+                    <a class="btn btn-outline-secondary" href="{{ resource.algorithm.get_absolute_url }}">{% trans "View Algorithm" %}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="h5">{% trans "Actions" %}</h2>
+                {% if user.is_authenticated %}
+                    <form method="post" action="{% url 'resources:bookmark' resource.pk %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-outline-primary w-100 mb-3">
+                            {% if is_bookmarked %}{% trans "Remove Bookmark" %}{% else %}{% trans "Bookmark Resource" %}{% endif %}
+                        </button>
+                    </form>
+                {% endif %}
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item px-0"><strong>{% trans "Type" %}:</strong> {{ resource.get_resource_type_display }}</li>
+                    <li class="list-group-item px-0"><strong>{% trans "Created" %}:</strong> {{ resource.created_at|date:"M d, Y" }}</li>
+                    <li class="list-group-item px-0"><strong>{% trans "Downloads" %}:</strong> {{ resource.download_count }}</li>
+                    <li class="list-group-item px-0"><strong>{% trans "Source URL" %}:</strong>
+                        {% if resource.external_url %}
+                            <a href="{{ resource.external_url }}" target="_blank" rel="noopener">{% trans "External Link" %}</a>
+                        {% else %}
+                            {% trans "Not provided" %}
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

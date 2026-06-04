@@ -1,0 +1,12 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <script>
+        (function () {
+            document.documentElement.setAttribute("data-bs-theme", "dark");
+            try { localStorage.setItem("jazzmin-theme-mode", "dark"); } catch (e) {}
+        })();
+    </script>
+{% endblock %}

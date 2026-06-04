@@ -1,0 +1,200 @@
+[
+  {
+    "model": "algorithms.algorithm",
+    "pk": 1,
+    "fields": {
+      "name": "Linear Regression",
+      "slug": "linear-regression",
+      "category": "regression",
+      "algorithm_type": "Supervised Learning",
+      "description": "Linear Regression estimates a continuous target variable by fitting a linear relationship between one or more input features and the predicted outcome.",
+      "mathematical_foundation": "The model minimizes a least-squares objective by finding coefficients that reduce the sum of squared residuals between predictions and observations.",
+      "advantages": "Easy to interpret, computationally efficient, and effective when feature relationships are close to linear.",
+      "disadvantages": "Sensitive to outliers, assumes linearity, and may underperform on highly non-linear problems.",
+      "applications": "House price prediction, demand forecasting, trend estimation, and baseline regression studies.",
+      "complexity": "Training typically scales with feature count and matrix decomposition cost; inference is linear in the number of features.",
+      "image": "",
+      "view_count": 125,
+      "created_at": "2026-06-01T08:00:00Z",
+      "updated_at": "2026-06-03T10:00:00Z"
+    }
+  },
+  {
+    "model": "algorithms.algorithm",
+    "pk": 2,
+    "fields": {
+      "name": "Decision Tree Classifier",
+      "slug": "decision-tree-classifier",
+      "category": "classification",
+      "algorithm_type": "Supervised Learning",
+      "description": "Decision Trees recursively partition feature space into regions that maximize class purity according to criteria such as Gini impurity or information gain.",
+      "mathematical_foundation": "The algorithm greedily chooses splits that optimize impurity reduction until stopping criteria or pruning constraints are reached.",
+      "advantages": "Highly interpretable, handles mixed data types, and requires little preprocessing.",
+      "disadvantages": "Can overfit noisy data and may become unstable when data distributions shift slightly.",
+      "applications": "Medical diagnosis support, credit scoring, customer segmentation, and rule extraction tasks.",
+      "complexity": "Training depends on the number of candidate splits per level; inference cost is proportional to tree depth.",
+      "image": "",
+      "view_count": 164,
+      "created_at": "2026-06-01T08:20:00Z",
+      "updated_at": "2026-06-03T12:00:00Z"
+    }
+  },
+  {
+    "model": "algorithms.algorithm",
+    "pk": 3,
+    "fields": {
+      "name": "K-Means Clustering",
+      "slug": "k-means-clustering",
+      "category": "clustering",
+      "algorithm_type": "Unsupervised Learning",
+      "description": "K-Means partitions observations into K clusters by iteratively refining centroids and assigning each sample to its nearest centroid.",
+      "mathematical_foundation": "The objective minimizes the within-cluster sum of squared distances between samples and their assigned centroids.",
+      "advantages": "Simple, fast on medium-sized datasets, and easy to visualize.",
+      "disadvantages": "Requires the number of clusters in advance and can converge to local minima depending on initialization.",
+      "applications": "Market segmentation, document grouping, image compression, and exploratory data analysis.",
+      "complexity": "Each iteration scales with the number of clusters, samples, and features.",
+      "image": "",
+      "view_count": 91,
+      "created_at": "2026-06-01T08:40:00Z",
+      "updated_at": "2026-06-03T09:30:00Z"
+    }
+  },
+  {
+    "model": "resources.resource",
+    "pk": 1,
+    "fields": {
+      "algorithm": 1,
+      "title": "An Introduction to Statistical Learning",
+      "resource_type": "book",
+      "author": "Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani",
+      "description": "A foundational textbook covering regression, classification, resampling, and modern predictive methods with intuitive explanations.",
+      "external_url": "https://www.statlearning.com/",
+      "file": "",
+      "download_count": 42,
+      "created_at": "2026-06-02T10:00:00Z"
+    }
+  },
+  {
+    "model": "resources.resource",
+    "pk": 2,
+    "fields": {
+      "algorithm": 2,
+      "title": "Decision Tree Learning Article",
+      "resource_type": "article",
+      "author": "Machine Learning Journal",
+      "description": "An accessible article explaining entropy, information gain, pruning, and real-world decision tree design choices.",
+      "external_url": "https://en.wikipedia.org/wiki/Decision_tree_learning",
+      "file": "",
+      "download_count": 30,
+      "created_at": "2026-06-02T11:00:00Z"
+    }
+  },
+  {
+    "model": "resources.resource",
+    "pk": 3,
+    "fields": {
+      "algorithm": 3,
+      "title": "K-Means Clustering Explained",
+      "resource_type": "video",
+      "author": "Educational Data Science Channel",
+      "description": "A short video walkthrough of centroid initialization, assignment, update steps, and convergence behavior.",
+      "external_url": "https://www.youtube.com/watch?v=4b5d3muPQmA",
+      "file": "",
+      "download_count": 19,
+      "created_at": "2026-06-02T12:00:00Z"
+    }
+  },
+  {
+    "model": "resources.resource",
+    "pk": 4,
+    "fields": {
+      "algorithm": 2,
+      "title": "Scikit-learn Decision Tree Documentation",
+      "resource_type": "documentation",
+      "author": "Scikit-learn",
+      "description": "Official documentation for implementing, tuning, and visualizing decision tree estimators in Python.",
+      "external_url": "https://scikit-learn.org/stable/modules/tree.html",
+      "file": "",
+      "download_count": 54,
+      "created_at": "2026-06-02T13:00:00Z"
+    }
+  },
+  {
+    "model": "algorithms.comment",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "algorithm": 1,
+      "text": "Linear Regression is still one of the best baseline models for evaluating how much signal exists in a dataset before moving to more complex methods.",
+      "created_at": "2026-06-03T13:00:00Z"
+    }
+  },
+  {
+    "model": "algorithms.comment",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "algorithm": 2,
+      "text": "Decision Trees are excellent for presenting interpretable logic to non-technical stakeholders, especially in final-year project demonstrations.",
+      "created_at": "2026-06-03T13:30:00Z"
+    }
+  },
+  {
+    "model": "algorithms.rating",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "algorithm": 1,
+      "score": 4,
+      "created_at": "2026-06-03T14:00:00Z",
+      "updated_at": "2026-06-03T14:00:00Z"
+    }
+  },
+  {
+    "model": "algorithms.rating",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "algorithm": 2,
+      "score": 5,
+      "created_at": "2026-06-03T14:05:00Z",
+      "updated_at": "2026-06-03T14:05:00Z"
+    }
+  },
+  {
+    "model": "accounts.favoritealgorithm",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "algorithm": 2,
+      "created_at": "2026-06-03T15:00:00Z"
+    }
+  },
+  {
+    "model": "accounts.recentlyviewedalgorithm",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "algorithm": 1,
+      "last_viewed_at": "2026-06-03T15:15:00Z"
+    }
+  },
+  {
+    "model": "accounts.recentlyviewedalgorithm",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "algorithm": 2,
+      "last_viewed_at": "2026-06-03T15:25:00Z"
+    }
+  },
+  {
+    "model": "resources.resourcebookmark",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "resource": 4,
+      "created_at": "2026-06-03T15:30:00Z"
+    }
+  }
+]

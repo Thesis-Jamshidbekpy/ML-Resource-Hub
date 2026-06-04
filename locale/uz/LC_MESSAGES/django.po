@@ -1,0 +1,884 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-03 21:27+0000\n"
+"PO-Revision-Date: 2026-06-04 01:35+0500\n"
+"Last-Translator: GPT-5.4 <noreply@example.com>\n"
+"Language-Team: Uzbek <uz@example.com>\n"
+"Language: uz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: apps/accounts/models.py:17 templates/accounts/profile.html:22
+msgid "Bio"
+msgstr "Bio"
+
+#: apps/accounts/models.py:18
+msgid "Avatar"
+msgstr "Avatar"
+
+#: apps/accounts/models.py:19 templates/accounts/profile.html:20
+msgid "Institution"
+msgstr "Muassasa"
+
+#: apps/accounts/models.py:20
+msgid "Academic interest"
+msgstr "Akademik qiziqish"
+
+#: apps/accounts/models.py:21 apps/algorithms/models.py:46
+#: apps/algorithms/models.py:154
+msgid "Updated at"
+msgstr "Yangilangan vaqti"
+
+#: apps/accounts/models.py:24 templates/accounts/profile.html:4
+#: templates/base.html:46
+msgid "Profile"
+msgstr "Profil"
+
+#: apps/accounts/models.py:25
+msgid "Profiles"
+msgstr "Profillar"
+
+#: apps/accounts/models.py:48 apps/algorithms/models.py:45
+#: apps/algorithms/models.py:122 apps/algorithms/models.py:153
+#: apps/resources/models.py:38 apps/resources/models.py:92
+msgid "Created at"
+msgstr "Yaratilgan vaqti"
+
+#: apps/accounts/models.py:51
+#, fuzzy
+#| msgid "Add to Favorites"
+msgid "Favorite"
+msgstr "Sevimli"
+
+#: apps/accounts/models.py:52
+#, fuzzy
+#| msgid "Add to Favorites"
+msgid "Favorites"
+msgstr "Sevimlilar"
+
+#: apps/accounts/models.py:78
+msgid "Last viewed at"
+msgstr "Oxirgi ko'rilgan vaqt"
+
+#: apps/accounts/models.py:81
+#, fuzzy
+#| msgid "Recently Viewed"
+msgid "Recent view"
+msgstr "Yaqinda ko'rilgan"
+
+#: apps/accounts/models.py:82
+#, fuzzy
+#| msgid "Recently Viewed"
+msgid "Recent views"
+msgstr "Yaqinda ko'rilganlar"
+
+#: apps/accounts/views.py:41
+msgid "Your account has been created successfully."
+msgstr "Hisobingiz muvaffaqiyatli yaratildi."
+
+#: apps/accounts/views.py:87
+msgid "Profile details updated successfully."
+msgstr "Profil ma'lumotlari muvaffaqiyatli yangilandi."
+
+#: apps/accounts/views.py:100
+msgid "Your account information has been updated."
+msgstr "Hisob ma'lumotlaringiz yangilandi."
+
+#: apps/accounts/views.py:102
+msgid "Please correct the highlighted fields and try again."
+msgstr "Iltimos, belgilangan maydonlarni to'g'rilang va qayta urinib ko'ring."
+
+#: apps/algorithms/admin.py:58 apps/resources/admin.py:27
+msgid "Primary Information"
+msgstr "Asosiy ma'lumotlar"
+
+#: apps/algorithms/admin.py:59 apps/algorithms/models.py:14
+msgid "Classification"
+msgstr "Tasnif"
+
+#: apps/algorithms/admin.py:60 apps/resources/admin.py:28
+msgid "English Content"
+msgstr "Inglizcha kontent"
+
+#: apps/algorithms/admin.py:61 apps/resources/admin.py:29
+msgid "Uzbek Content"
+msgstr "O'zbekcha kontent"
+
+#: apps/algorithms/admin.py:62 apps/resources/admin.py:30
+msgid "Analytics"
+msgstr "Analitika"
+
+#: apps/algorithms/forms.py:22 apps/resources/forms.py:22
+#: templates/base.html:30 templates/dashboard/search_results.html:38
+msgid "Search"
+msgstr "Qidirish"
+
+#: apps/algorithms/forms.py:25 templates/dashboard/search_results.html:22
+msgid "All Categories"
+msgstr "Barcha kategoriyalar"
+
+#: apps/algorithms/forms.py:30 apps/algorithms/models.py:25
+msgid "Name"
+msgstr "Nomi"
+
+#: apps/algorithms/forms.py:31 apps/resources/forms.py:32
+msgid "Popularity"
+msgstr "Mashhurlik"
+
+#: apps/algorithms/forms.py:32 apps/resources/forms.py:31
+msgid "Latest"
+msgstr "Eng so'nggi"
+
+#: apps/algorithms/forms.py:34 apps/resources/forms.py:35
+msgid "Ordering"
+msgstr "Saralash"
+
+#: apps/algorithms/forms.py:49
+msgid "Share your insight or experience."
+msgstr "Fikringiz yoki tajribangizni ulashing."
+
+#: apps/algorithms/models.py:13
+msgid "Regression"
+msgstr "Regressiya"
+
+#: apps/algorithms/models.py:15
+msgid "Clustering"
+msgstr "Klasterlash"
+
+#: apps/algorithms/models.py:16
+msgid "Deep Learning"
+msgstr "Chuqur o'rganish"
+
+#: apps/algorithms/models.py:17
+msgid "Reinforcement Learning"
+msgstr "Mustahkamlovchi o'rganish"
+
+#: apps/algorithms/models.py:18
+msgid "Dimensionality Reduction"
+msgstr "O'lchamni kamaytirish"
+
+#: apps/algorithms/models.py:19
+msgid "Ensemble Learning"
+msgstr "Ansambl o'rganish"
+
+#: apps/algorithms/models.py:26
+msgid "Name (Uzbek)"
+msgstr "Nomi (o'zbekcha)"
+
+#: apps/algorithms/models.py:27
+msgid "Slug"
+msgstr "Slug"
+
+#: apps/algorithms/models.py:28 templates/accounts/profile.html:35
+#: templates/dashboard/dashboard.html:47
+#: templates/dashboard/search_results.html:20
+msgid "Category"
+msgstr "Kategoriya"
+
+#: apps/algorithms/models.py:29
+msgid "Algorithm type"
+msgstr "Algoritm turi"
+
+#: apps/algorithms/models.py:30
+msgid "Algorithm type (Uzbek)"
+msgstr "Algoritm turi (o'zbekcha)"
+
+#: apps/algorithms/models.py:31 apps/resources/models.py:33
+msgid "Description"
+msgstr "Tavsif"
+
+#: apps/algorithms/models.py:32 apps/resources/models.py:34
+msgid "Description (Uzbek)"
+msgstr "Tavsif (o'zbekcha)"
+
+#: apps/algorithms/models.py:33
+msgid "Mathematical foundation"
+msgstr "Matematik asos"
+
+#: apps/algorithms/models.py:34
+msgid "Mathematical foundation (Uzbek)"
+msgstr "Matematik asos (o'zbekcha)"
+
+#: apps/algorithms/models.py:35 templates/algorithms/algorithm_detail.html:22
+msgid "Advantages"
+msgstr "Afzalliklar"
+
+#: apps/algorithms/models.py:36
+msgid "Advantages (Uzbek)"
+msgstr "Afzalliklar (o'zbekcha)"
+
+#: apps/algorithms/models.py:37 templates/algorithms/algorithm_detail.html:24
+msgid "Disadvantages"
+msgstr "Kamchiliklar"
+
+#: apps/algorithms/models.py:38
+msgid "Disadvantages (Uzbek)"
+msgstr "Kamchiliklar (o'zbekcha)"
+
+#: apps/algorithms/models.py:39 templates/algorithms/algorithm_detail.html:26
+msgid "Applications"
+msgstr "Qo'llanilish sohalari"
+
+#: apps/algorithms/models.py:40
+msgid "Applications (Uzbek)"
+msgstr "Qo'llanilish sohalari (o'zbekcha)"
+
+#: apps/algorithms/models.py:41 templates/algorithms/algorithm_detail.html:28
+msgid "Complexity"
+msgstr "Murakkablik"
+
+#: apps/algorithms/models.py:42
+msgid "Complexity (Uzbek)"
+msgstr "Murakkablik (o'zbekcha)"
+
+#: apps/algorithms/models.py:43
+msgid "Image"
+msgstr "Rasm"
+
+#: apps/algorithms/models.py:44
+msgid "View count"
+msgstr "Ko'rishlar soni"
+
+#: apps/algorithms/models.py:49 templates/accounts/profile.html:34
+#: templates/dashboard/dashboard.html:46
+msgid "Algorithm"
+msgstr "Algoritm"
+
+#: apps/algorithms/models.py:50 templates/algorithms/algorithm_list.html:4
+#: templates/base.html:25 templates/dashboard/dashboard.html:18
+#: templates/dashboard/search_results.html:48
+msgid "Algorithms"
+msgstr "Algoritmlar"
+
+#: apps/algorithms/models.py:121
+msgid "Text"
+msgstr "Matn"
+
+#: apps/algorithms/models.py:125
+msgid "Comment"
+msgstr "Izoh"
+
+#: apps/algorithms/models.py:126 templates/algorithms/algorithm_detail.html:63
+msgid "Comments"
+msgstr "Izohlar"
+
+#: apps/algorithms/models.py:151
+msgid "Score"
+msgstr "Baho"
+
+#: apps/algorithms/models.py:157 templates/algorithms/algorithm_list.html:42
+#: templates/dashboard/search_results.html:52
+msgid "Rating"
+msgstr "Reyting"
+
+#: apps/algorithms/models.py:158
+msgid "Ratings"
+msgstr "Reytinglar"
+
+#: apps/algorithms/views.py:138
+msgid "Your comment has been published."
+msgstr "Izohingiz chop etildi."
+
+#: apps/algorithms/views.py:140
+msgid "Comment submission failed. Please try again."
+msgstr "Izoh yuborilmadi. Iltimos, qayta urinib ko'ring."
+
+#: apps/algorithms/views.py:156
+msgid "Your rating has been saved."
+msgstr "Bahoyingiz saqlandi."
+
+#: apps/algorithms/views.py:158
+msgid "Rating submission failed. Please select a score from 1 to 5."
+msgstr "Baho yuborilmadi. Iltimos, 1 dan 5 gacha bahoni tanlang."
+
+#: apps/algorithms/views.py:172
+#, python-format
+msgid "%(algorithm)s was added to your favorites."
+msgstr "%(algorithm)s sevimlilaringizga qo'shildi."
+
+#: apps/algorithms/views.py:175
+#, python-format
+msgid "%(algorithm)s was removed from your favorites."
+msgstr "%(algorithm)s sevimlilaringizdan olib tashlandi."
+
+#: apps/resources/forms.py:25 templates/dashboard/search_results.html:31
+msgid "All Resource Types"
+msgstr "Barcha resurs turlari"
+
+#: apps/resources/forms.py:26 apps/resources/models.py:30
+msgid "Resource type"
+msgstr "Resurs turi"
+
+#: apps/resources/forms.py:33 apps/resources/models.py:28
+#: templates/algorithms/algorithm_detail.html:40
+msgid "Title"
+msgstr "Sarlavha"
+
+#: apps/resources/models.py:12
+msgid "Book"
+msgstr "Kitob"
+
+#: apps/resources/models.py:13
+msgid "Article"
+msgstr "Maqola"
+
+#: apps/resources/models.py:14
+msgid "Research Paper"
+msgstr "Ilmiy maqola"
+
+#: apps/resources/models.py:15
+msgid "Video"
+msgstr "Video"
+
+#: apps/resources/models.py:16
+msgid "Documentation"
+msgstr "Dokumentatsiya"
+
+#: apps/resources/models.py:17
+msgid "Dataset"
+msgstr "Dataset"
+
+#: apps/resources/models.py:29
+msgid "Title (Uzbek)"
+msgstr "Sarlavha (o'zbekcha)"
+
+#: apps/resources/models.py:31
+msgid "Author"
+msgstr "Muallif"
+
+#: apps/resources/models.py:32
+msgid "Author (Uzbek)"
+msgstr "Muallif (o'zbekcha)"
+
+#: apps/resources/models.py:35
+msgid "External URL"
+msgstr "Tashqi URL"
+
+#: apps/resources/models.py:36
+msgid "File"
+msgstr "Fayl"
+
+#: apps/resources/models.py:37
+msgid "Download count"
+msgstr "Yuklab olishlar soni"
+
+#: apps/resources/models.py:41
+msgid "Resource"
+msgstr "Resurs"
+
+#: apps/resources/models.py:42 templates/base.html:26
+#: templates/dashboard/dashboard.html:25
+#: templates/dashboard/search_results.html:63
+#: templates/resources/resource_list.html:4
+msgid "Resources"
+msgstr "Resurslar"
+
+#: apps/resources/models.py:95
+#, fuzzy
+#| msgid "Remove Bookmark"
+msgid "Bookmark"
+msgstr "Saqlangan"
+
+#: apps/resources/models.py:96
+#, fuzzy
+#| msgid "Bookmark Resource"
+msgid "Bookmarks"
+msgstr "Saqlanganlar"
+
+#: apps/resources/views.py:82
+msgid "Resource bookmarked successfully."
+msgstr "Resurs muvaffaqiyatli bookmark qilindi."
+
+#: apps/resources/views.py:85
+msgid "Resource removed from your bookmarks."
+msgstr "Resurs bookmarklardan olib tashlandi."
+
+#: apps/resources/views.py:98
+msgid "The requested file could not be found."
+msgstr "So'ralgan fayl topilmadi."
+
+#: apps/resources/views.py:104
+msgid "This resource does not have a downloadable file or external link."
+msgstr "Bu resursda yuklab olinadigan fayl yoki tashqi havola yo'q."
+
+#: config/jazzmin_settings.py:14
+#, fuzzy
+#| msgid "ML Resource Hub Admin"
+msgid "Welcome to ML Resource Hub admin"
+msgstr "ML Resource Hub admin"
+
+#: config/jazzmin_settings.py:20 templates/base.html:24
+#: templates/dashboard/home.html:4
+msgid "Home"
+msgstr "Bosh sahifa"
+
+#: config/jazzmin_settings.py:21 config/jazzmin_settings.py:25
+#, fuzzy
+#| msgid "Open Website"
+msgid "Website"
+msgstr "Saytni ochish"
+
+#: config/jazzmin_settings.py:22 templates/base.html:27
+#: templates/dashboard/dashboard.html:4
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: templates/accounts/login.html:4 templates/base.html:54
+msgid "Login"
+msgstr "Kirish"
+
+#: templates/accounts/login.html:4 templates/accounts/profile.html:4
+#: templates/accounts/profile_edit.html:4 templates/accounts/register.html:4
+#: templates/algorithms/algorithm_detail.html:4
+#: templates/algorithms/algorithm_list.html:4 templates/base.html:7
+#: templates/dashboard/dashboard.html:4 templates/dashboard/home.html:4
+#: templates/dashboard/search_results.html:4
+#: templates/resources/resource_detail.html:4
+#: templates/resources/resource_list.html:4
+msgid "ML Resource Hub"
+msgstr "ML Resource Hub"
+
+#: templates/accounts/login.html:15
+msgid ""
+"Structured database for machine learning algorithms, study resources, "
+"ratings, and bookmarks."
+msgstr ""
+
+#: templates/accounts/login.html:21
+#, fuzzy
+#| msgid "ML Resource Hub Admin"
+msgid "Welcome to your account"
+msgstr "ML Resource Hub admin"
+
+#: templates/accounts/login.html:42
+msgid "Sign In"
+msgstr "Tizimga kirish"
+
+#: templates/accounts/login.html:46
+msgid "New here?"
+msgstr "Bu yerda yangimisiz?"
+
+#: templates/accounts/login.html:46
+msgid "Create an account"
+msgstr "Hisob yaratish"
+
+#: templates/accounts/login.html:50
+msgid "System active"
+msgstr ""
+
+#: templates/accounts/profile.html:12 templates/accounts/profile_edit.html:4
+#: templates/accounts/profile_edit.html:11
+msgid "Edit Profile"
+msgstr "Profilni tahrirlash"
+
+#: templates/accounts/profile.html:19
+msgid "Academic Profile"
+msgstr "Akademik profil"
+
+#: templates/accounts/profile.html:20 templates/accounts/profile.html:21
+#: templates/resources/resource_detail.html:46
+msgid "Not provided"
+msgstr "Kiritilmagan"
+
+#: templates/accounts/profile.html:21
+msgid "Research Interest"
+msgstr "Tadqiqot qiziqishi"
+
+#: templates/accounts/profile.html:22
+msgid "No biography added yet."
+msgstr "Hali bio kiritilmagan."
+
+#: templates/accounts/profile.html:29
+msgid "Recently Viewed Algorithms"
+msgstr "Yaqinda ko'rilgan algoritmlar"
+
+#: templates/accounts/profile.html:36
+msgid "Viewed"
+msgstr "Ko'rilgan"
+
+#: templates/accounts/profile.html:47
+msgid "No viewing history yet."
+msgstr "Hali ko'rish tarixi yo'q."
+
+#: templates/accounts/profile.html:61
+msgid "Favorite Algorithms"
+msgstr "Sevimli algoritmlar"
+
+#: templates/accounts/profile.html:68
+msgid "You have not saved any favorite algorithms yet."
+msgstr "Siz hali sevimli algoritm saqlamagansiz."
+
+#: templates/accounts/profile.html:76
+msgid "Bookmarked Resources"
+msgstr "Bookmark qilingan resurslar"
+
+#: templates/accounts/profile.html:83
+msgid "You have not bookmarked any resources yet."
+msgstr "Siz hali hech qanday resursni bookmark qilmagansiz."
+
+#: templates/accounts/profile_edit.html:14
+msgid "Account Information"
+msgstr "Hisob ma'lumotlari"
+
+#: templates/accounts/profile_edit.html:16
+msgid "Profile Details"
+msgstr "Profil tafsilotlari"
+
+#: templates/accounts/profile_edit.html:19
+msgid "Save Changes"
+msgstr "O'zgarishlarni saqlash"
+
+#: templates/accounts/profile_edit.html:20
+msgid "Cancel"
+msgstr "Bekor qilish"
+
+#: templates/accounts/register.html:4 templates/accounts/register.html:16
+#: templates/base.html:55
+msgid "Register"
+msgstr "Ro'yxatdan o'tish"
+
+#: templates/accounts/register.html:11
+msgid "Create Account"
+msgstr "Hisob yaratish"
+
+#: templates/accounts/register.html:12
+msgid ""
+"Register to comment, rate algorithms, save favorites, and bookmark resources."
+msgstr ""
+"Izoh yozish, algoritmlarga baho berish, sevimlilarni saqlash va resurslarni "
+"bookmark qilish uchun ro'yxatdan o'ting."
+
+#: templates/algorithms/algorithm_detail.html:14
+msgid "views"
+msgstr "ko'rishlar"
+
+#: templates/algorithms/algorithm_detail.html:20
+msgid "Mathematical Foundation"
+msgstr "Matematik asos"
+
+#: templates/algorithms/algorithm_detail.html:35
+#: templates/resources/resource_list.html:8
+msgid "Learning Resources"
+msgstr "O'quv resurslari"
+
+#: templates/algorithms/algorithm_detail.html:41
+#: templates/resources/resource_detail.html:39
+msgid "Type"
+msgstr "Turi"
+
+#: templates/algorithms/algorithm_detail.html:42
+#: templates/resources/resource_detail.html:41
+msgid "Downloads"
+msgstr "Yuklab olishlar"
+
+#: templates/algorithms/algorithm_detail.html:53
+msgid "No resources linked yet."
+msgstr "Hali resurslar bog'lanmagan."
+
+#: templates/algorithms/algorithm_detail.html:68
+msgid "Post Comment"
+msgstr "Izoh qoldirish"
+
+#: templates/algorithms/algorithm_detail.html:71
+msgid "Please"
+msgstr "Iltimos"
+
+#: templates/algorithms/algorithm_detail.html:71
+msgid "log in"
+msgstr "tizimga kiring"
+
+#: templates/algorithms/algorithm_detail.html:71
+msgid "to comment."
+msgstr "va izoh qoldiring."
+
+#: templates/algorithms/algorithm_detail.html:82
+msgid "No comments yet."
+msgstr "Hali izohlar yo'q."
+
+#: templates/algorithms/algorithm_detail.html:91
+msgid "Your Actions"
+msgstr "Sizning amallaringiz"
+
+#: templates/algorithms/algorithm_detail.html:96
+msgid "Remove from Favorites"
+msgstr "Sevimlilardan olib tashlash"
+
+#: templates/algorithms/algorithm_detail.html:96
+msgid "Add to Favorites"
+msgstr "Sevimlilarga qo'shish"
+
+#: templates/algorithms/algorithm_detail.html:102
+msgid "Save Rating"
+msgstr "Bahoni saqlash"
+
+#: templates/algorithms/algorithm_detail.html:105
+msgid "Login to rate this algorithm or save it to favorites."
+msgstr ""
+"Bu algoritmga baho berish yoki sevimlilarga saqlash uchun tizimga kiring."
+
+#: templates/algorithms/algorithm_detail.html:112
+msgid "Related Algorithms"
+msgstr "O'xshash algoritmlar"
+
+#: templates/algorithms/algorithm_detail.html:119
+msgid "No related algorithms found in this category."
+msgstr "Bu kategoriyada o'xshash algoritmlar topilmadi."
+
+#: templates/algorithms/algorithm_list.html:10
+msgid ""
+"Browse core algorithms, search by name, and filter by category or popularity."
+msgstr ""
+"Asosiy algoritmlarni ko'ring, nomi bo'yicha qidiring va kategoriya yoki "
+"mashhurlik bo'yicha filterlang."
+
+#: templates/algorithms/algorithm_list.html:43
+msgid "ratings"
+msgstr "reytinglar"
+
+#: templates/algorithms/algorithm_list.html:45
+msgid "View Details"
+msgstr "Batafsil ko'rish"
+
+#: templates/algorithms/algorithm_list.html:51
+msgid "No algorithms matched your current filters."
+msgstr "Joriy filterlarga mos algoritmlar topilmadi."
+
+#: templates/base.html:31
+msgid "Go"
+msgstr "O'tish"
+
+#: templates/base.html:50
+msgid "Logout"
+msgstr "Chiqish"
+
+#: templates/base.html:59
+msgid "Admin"
+msgstr ""
+
+#: templates/base.html:85
+msgid ""
+"ML Resource Hub graduation project built with Django, PostgreSQL, DRF, and "
+"Bootstrap 5."
+msgstr ""
+"ML Resource Hub bitiruv loyihasi Django, PostgreSQL, DRF va Bootstrap 5 "
+"yordamida qurilgan."
+
+#: templates/dashboard/dashboard.html:8
+msgid "PLATFORM OVERVIEW"
+msgstr ""
+
+#: templates/dashboard/dashboard.html:9
+msgid "Platform Dashboard"
+msgstr "Platforma dashboardi"
+
+#: templates/dashboard/dashboard.html:10
+msgid "A management overview of algorithms, resources, and users."
+msgstr ""
+"Algoritmlar, resurslar va foydalanuvchilar bo'yicha boshqaruv ko'rinishi."
+
+#: templates/dashboard/dashboard.html:32
+msgid "Users"
+msgstr "Foydalanuvchilar"
+
+#: templates/dashboard/dashboard.html:41
+msgid "Most Viewed Algorithms"
+msgstr "Eng ko'p ko'rilgan algoritmlar"
+
+#: templates/dashboard/dashboard.html:48
+msgid "Views"
+msgstr "Ko'rishlar"
+
+#: templates/dashboard/dashboard.html:59
+msgid "No algorithms available."
+msgstr "Hozircha algoritmlar mavjud emas."
+
+#: templates/dashboard/dashboard.html:70 templates/dashboard/home.html:57
+msgid "Latest Resources"
+msgstr "Eng so'nggi resurslar"
+
+#: templates/dashboard/dashboard.html:79
+msgid "No resources available."
+msgstr "Hozircha resurslar mavjud emas."
+
+#: templates/dashboard/home.html:8
+msgid "ACADEMIC ML DATABASE"
+msgstr ""
+
+#: templates/dashboard/home.html:9
+msgid "Explore machine learning algorithms and curated study resources."
+msgstr ""
+"Mashinali o'qitish algoritmlari va saralangan o'quv resurslarini o'rganing."
+
+#: templates/dashboard/home.html:10
+msgid ""
+"ML Resource Hub is a structured academic database for browsing algorithms, "
+"comparing concepts, and discovering books, articles, videos, papers, "
+"datasets, and documentation."
+msgstr ""
+"ML Resource Hub algoritmlarni ko'rish, tushunchalarni taqqoslash va "
+"kitoblar, maqolalar, videolar, ilmiy ishlar, datasetlar hamda "
+"dokumentatsiyalarni topish uchun mo'ljallangan akademik bazadir."
+
+#: templates/dashboard/home.html:13
+msgid "Browse Algorithms"
+msgstr "Algoritmlarni ko'rish"
+
+#: templates/dashboard/home.html:16
+msgid "Explore Resources"
+msgstr "Resurslarni ko'rish"
+
+#: templates/dashboard/home.html:19
+msgid "Admin panel"
+msgstr ""
+
+#: templates/dashboard/home.html:29
+msgid "Featured Algorithms"
+msgstr "Ajratilgan algoritmlar"
+
+#: templates/dashboard/home.html:30
+msgid "View all"
+msgstr "Barchasini ko'rish"
+
+#: templates/dashboard/home.html:40
+msgid "Read more"
+msgstr "Batafsil"
+
+#: templates/dashboard/home.html:51
+msgid "Quick Search"
+msgstr "Tezkor qidiruv"
+
+#: templates/dashboard/home.html:54
+msgid "Search Hub"
+msgstr "Platformada qidirish"
+
+#: templates/dashboard/home.html:64
+msgid "No resources available yet."
+msgstr "Hali resurslar mavjud emas."
+
+#: templates/dashboard/home.html:74
+msgid "Recently Viewed"
+msgstr "Yaqinda ko'rilganlar"
+
+#: templates/dashboard/search_results.html:4
+#: templates/dashboard/search_results.html:8
+msgid "Search Results"
+msgstr "Qidiruv natijalari"
+
+#: templates/dashboard/search_results.html:9
+#, python-format
+msgid "Results for \"%(search_term)s\"."
+msgstr "\"%(search_term)s\" bo'yicha natijalar."
+
+#: templates/dashboard/search_results.html:16
+msgid "Keyword"
+msgstr "Kalit so'z"
+
+#: templates/dashboard/search_results.html:29
+msgid "Resource Type"
+msgstr "Resurs turi"
+
+#: templates/dashboard/search_results.html:55
+msgid "No matching algorithms found."
+msgstr "Mos algoritmlar topilmadi."
+
+#: templates/dashboard/search_results.html:70
+msgid "No matching resources found."
+msgstr "Mos resurslar topilmadi."
+
+#: templates/resources/resource_detail.html:13
+#: templates/resources/resource_list.html:32
+msgid "downloads"
+msgstr "yuklab olishlar"
+
+#: templates/resources/resource_detail.html:19
+msgid "Access Resource"
+msgstr "Resursga o'tish"
+
+#: templates/resources/resource_detail.html:20
+msgid "View Algorithm"
+msgstr "Algoritmni ko'rish"
+
+#: templates/resources/resource_detail.html:29
+msgid "Actions"
+msgstr "Amallar"
+
+#: templates/resources/resource_detail.html:34
+msgid "Remove Bookmark"
+msgstr "Bookmarkni olib tashlash"
+
+#: templates/resources/resource_detail.html:34
+msgid "Bookmark Resource"
+msgstr "Resursni bookmark qilish"
+
+#: templates/resources/resource_detail.html:40
+msgid "Created"
+msgstr "Yaratilgan"
+
+#: templates/resources/resource_detail.html:42
+msgid "Source URL"
+msgstr "Manba URL"
+
+#: templates/resources/resource_detail.html:44
+msgid "External Link"
+msgstr "Tashqi havola"
+
+#: templates/resources/resource_list.html:9
+msgid ""
+"Books, papers, articles, videos, documentation, and datasets for algorithm "
+"study."
+msgstr ""
+"Algoritmlarni o'rganish uchun kitoblar, ilmiy ishlar, maqolalar, videolar, "
+"dokumentatsiyalar va datasetlar."
+
+#: templates/resources/resource_list.html:19
+msgid "Apply Filters"
+msgstr "Filterni qo'llash"
+
+#: templates/resources/resource_list.html:39
+msgid "View Resource"
+msgstr "Resursni ko'rish"
+
+#: templates/resources/resource_list.html:45
+msgid "No resources matched your current filters."
+msgstr "Joriy filterlarga mos resurslar topilmadi."
+
+#~ msgid "Access your personalized dashboard, bookmarks, and favorites."
+#~ msgstr "Shaxsiy dashboard, bookmarklar va sevimlilarga kiring."
+
+#~ msgid "Favorite algorithm"
+#~ msgstr "Sevimli algoritm"
+
+#~ msgid "Favorite algorithms"
+#~ msgstr "Sevimli algoritmlar"
+
+#~ msgid "Recently viewed algorithm"
+#~ msgstr "Yaqinda ko'rilgan algoritm"
+
+#~ msgid "Recently viewed algorithms"
+#~ msgstr "Yaqinda ko'rilgan algoritmlar"
+
+#~ msgid "ML Resource Hub Administration"
+#~ msgstr "ML Resource Hub boshqaruvi"
+
+#~ msgid "Platform Management"
+#~ msgstr "Platforma boshqaruvi"
+
+#~ msgid "Resource bookmark"
+#~ msgstr "Resurs bookmarki"
+
+#~ msgid "Resource bookmarks"
+#~ msgstr "Resurs bookmarklari"
+
+#~ msgid "Modern bilingual control center for algorithms, resources, and users"
+#~ msgstr ""
+#~ "Algoritmlar, resurslar va foydalanuvchilar uchun zamonaviy ikki tilli "
+#~ "boshqaruv markazi"
