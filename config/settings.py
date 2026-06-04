@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import os
 from pathlib import Path
+from tkinter import ALL
 
 from dotenv import load_dotenv
 
@@ -26,7 +27,8 @@ SECRET_KEY = os.getenv(
 DEBUG = env_bool("DJANGO_DEBUG", True)
 default_hosts = {"127.0.0.1", "localhost", "testserver"}
 configured_hosts = {host.strip() for host in os.getenv("DJANGO_ALLOWED_HOSTS", "").split(",") if host.strip()}
-ALLOWED_HOSTS = sorted(default_hosts | configured_hosts)
+# ALLOWED_HOSTS = sorted(default_hosts | configured_hosts)
+ALLOWED_HOSTS = ["*"]  # Allow all hosts for development; adjust in production!
 
 INSTALLED_APPS = [
     "jazzmin",
