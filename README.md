@@ -246,6 +246,31 @@ docker compose up --build
 
 The `web` service runs migrations automatically and serves the application on port `8000`.
 
+### Docker: `password authentication failed for user "postgres"`
+
+PostgreSQL stores the password only when the data volume is **first created**. If you later change `POSTGRES_PASSWORD` in `.env`, the running database still uses the old password.
+
+**Fix (resets all DB data):**
+
+```bash
+docker compose down -v
+docker compose up --build
+```
+
+Ensure `.env` matches `.env.example` for Docker (or set the same values in both `db` and `web`):
+
+```env
+POSTGRES_DB=ml_resource_hub
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+```
+
+Then seed demo data inside the container:
+
+```bash
+docker compose exec web python manage.py seed_demo_data
+```
+
 ### Docker build: `registry-1.docker.io: no such host`
 
 This is a **DNS/network issue inside Docker Desktop**, not a broken `Dockerfile`. The image tag `python:3.13-slim` is valid.
